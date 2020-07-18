@@ -161,6 +161,124 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en1">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/18/hexo-re/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuhui Luo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="罗宇晖的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/18/hexo-re/" class="post-title-link" itemprop="url">hexo_re</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-07-18 19:29:30 / Modified: 19:30:04" itemprop="dateCreated datePublished" datetime="2020-07-18T19:29:30+08:00">2020-07-18</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Restart"><a href="#Restart" class="headerlink" title="Restart"></a>Restart</h2><p>几个月前使用过hexo 建过blog ， 当时还配置了inline-math ; 几个月后发现当时的math配置不能用了以及自己又忘了当时hexo 自己做的修改和指令。 现在只好重新建站，同时希望可以完成每周一篇post 发表。</p>
+<h2 id="What-this-post-about"><a href="#What-this-post-about" class="headerlink" title="What this post about ?"></a>What this post about ?</h2><p>这次我会详细记录自己建站流程，以及遇到的坑和解决方式。 </p>
+<p>主要分为以下三块内容：</p>
+<ul>
+<li>hexo 配置&amp;主题设置</li>
+<li>我的需求如何实现</li>
+<li>日常使用</li>
+</ul>
+<h2 id="hexo-配置-amp-主题设置"><a href="#hexo-配置-amp-主题设置" class="headerlink" title="hexo 配置&amp;主题设置"></a>hexo 配置&amp;主题设置</h2><p>网上很多hexo 配置文章了，基本上就是：</p>
+<ul>
+<li>用npm 安装下hexo-cli</li>
+<li>git clone next theme  <a href="https://www.jianshu.com/p/b20fc983005f" target="_blank" rel="noopener">指南这里有</a></li>
+</ul>
+<p>在这里主要提下几个容易混淆的地方:</p>
+<ul>
+<li>theme 安装： 需要在你起blog 的主要目录，然后<code>git clone https://github.com/iissnan/hexo-theme-next themes/next</code>  </li>
+<li>两个很容易混淆的config：<ul>
+<li>一个是在主目录下有个_config.yml : 这个是hexo的配置文件。主要设置站点名字，语言、作者、部署的网站,math(如果需要)</li>
+<li>然后在<code>主目录/themes/next</code> 下也有个_config.yml ：这个是theme 的配置文件。主要用来设置tag, category 和enable math 开关。</li>
+</ul>
+</li>
+</ul>
+<h2 id="我的两个需求"><a href="#我的两个需求" class="headerlink" title="我的两个需求"></a>我的两个需求</h2><p>建站当时主要有两个需求： 一个用来记录读过的论文，一个用来记录体重管理。</p>
+<ul>
+<li>论文的话，肯定离不开会有公式，google了hexo对math的支持，大多数是说hexo-math。 但其实hexo-math 这个包已经没在维护了，最后定位到网上有大佬做了介绍, 讲的很好，移步<a href="https://www.jianshu.com/p/b20fc983005f" target="_blank" rel="noopener">这里</a>.</li>
+<li>体重管理需要一个在线交互的折线图: 这方面第一直觉想到的是echarts , 还好百度<a href="https://tushuo.baidu.com/" target="_blank" rel="noopener">图说</a>可以在线编辑图片然后导出代码块。但另外一个问题来了，hexo 可以渲染echarts 吗？ 搜了一波插件发现有人也实现了，直接上<a href="https://kchen.cc/2016/11/05/echarts-in-hexo/" target="_blank" rel="noopener">链接</a>。</li>
+</ul>
+<h2 id="日常使用"><a href="#日常使用" class="headerlink" title="日常使用"></a>日常使用</h2><p>hexo 很好用，此次几个月没用自己都忘了post 和page 有啥区别了，折腾了很久也遇到多次render 错误。这里总结下：</p>
+<ul>
+<li>post: 就是一篇帖子，你发的一个博文就是一个post</li>
+<li>page： 就是一个个你可以切换的页面，我觉得可以理解为主题</li>
+</ul>
+<p>在路径显示上是这样的</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">布局</th>
+<th style="text-align:left">路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>post</code></td>
+<td style="text-align:left"><code>source/_posts</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>page</code></td>
+<td style="text-align:left"><code>source</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>说post 和page的作用是日常使用应该是基本上会以hexo new post “post_name” 为主，然后去source/_posts 下找到对应.md 文件进行修改。</p>
+<p>几个日常操作:</p>
+<ul>
+<li>hexo g (生成)</li>
+<li>hexo s (本地起一个server， 可以用来查看)</li>
+<li>hexo d （push 到github, 所有人都可以通过yourgitusername.github.io查看) </li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en1">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/18/weight-loss/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -435,12 +553,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>

@@ -20,19 +20,19 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="主要思想GCN 局限传统的GCN的layer一般是2，这样通过两次聚合，其实是聚合了二阶邻居；这样做的原因是由gcn聚合的方式决定的，并不是因为我们不能设置hop&#x3D; 5,6 … , 而是因为中间layer（也就是聚合次数）设置的越多，实际上模型更有一种聚合越多节点（极限情况是所有节点，如果是全连通的图）。">
+  <meta name="description" content="Restart几个月前使用过hexo 建过blog ， 当时还配置了inline-math ; 几个月后发现当时的math配置不能用了以及自己又忘了当时hexo 自己做的修改和指令。 现在只好重新建站，同时希望可以完成每周一篇post 发表。 What this post about ?这次我会详细记录自己建站流程，以及遇到的坑和解决方式。  主要分为以下三块内容：  hexo 配置&amp;主题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Graph Neural Networks meet Personalized PageRank PPR和图神经网络">
-<meta property="og:url" content="http://yoursite.com/2020/02/25/pprgcn/index.html">
+<meta property="og:title" content="hexo_re">
+<meta property="og:url" content="http://yoursite.com/2020/07/18/hexo-re/index.html">
 <meta property="og:site_name" content="罗宇晖的个人博客">
-<meta property="og:description" content="主要思想GCN 局限传统的GCN的layer一般是2，这样通过两次聚合，其实是聚合了二阶邻居；这样做的原因是由gcn聚合的方式决定的，并不是因为我们不能设置hop&#x3D; 5,6 … , 而是因为中间layer（也就是聚合次数）设置的越多，实际上模型更有一种聚合越多节点（极限情况是所有节点，如果是全连通的图）。">
-<meta property="article:published_time" content="2020-02-25T09:40:33.000Z">
-<meta property="article:modified_time" content="2020-07-18T08:50:20.179Z">
+<meta property="og:description" content="Restart几个月前使用过hexo 建过blog ， 当时还配置了inline-math ; 几个月后发现当时的math配置不能用了以及自己又忘了当时hexo 自己做的修改和指令。 现在只好重新建站，同时希望可以完成每周一篇post 发表。 What this post about ?这次我会详细记录自己建站流程，以及遇到的坑和解决方式。  主要分为以下三块内容：  hexo 配置&amp;主题">
+<meta property="article:published_time" content="2020-07-18T11:29:30.000Z">
+<meta property="article:modified_time" content="2020-07-18T11:30:04.685Z">
 <meta property="article:author" content="Yuhui Luo">
-<meta property="article:tag" content="Graph deep learning">
+<meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/02/25/pprgcn/">
+<link rel="canonical" href="http://yoursite.com/2020/07/18/hexo-re/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>Graph Neural Networks meet Personalized PageRank PPR和图神经网络 | 罗宇晖的个人博客</title>
+  <title>hexo_re | 罗宇晖的个人博客</title>
   
 
 
@@ -165,7 +165,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en1">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/25/pprgcn/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/18/hexo-re/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -178,7 +178,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Graph Neural Networks meet Personalized PageRank PPR和图神经网络
+          hexo_re
         </h1>
 
         <div class="post-meta">
@@ -187,16 +187,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2020-02-25 17:40:33" itemprop="dateCreated datePublished" datetime="2020-02-25T17:40:33+08:00">2020-02-25</time>
+              <time title="Created: 2020-07-18 19:29:30 / Modified: 19:30:04" itemprop="dateCreated datePublished" datetime="2020-07-18T19:29:30+08:00">2020-07-18</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-07-18 16:50:20" itemprop="dateModified" datetime="2020-07-18T16:50:20+08:00">2020-07-18</time>
-              </span>
 
           
 
@@ -209,21 +203,66 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="主要思想"><a href="#主要思想" class="headerlink" title="主要思想"></a>主要思想</h2><h3 id="GCN-局限"><a href="#GCN-局限" class="headerlink" title="GCN 局限"></a>GCN 局限</h3><p>传统的GCN的layer一般是2，这样通过两次聚合，其实是聚合了二阶邻居；这样做的原因是由gcn聚合的方式决定的，并不是因为我们不能设置hop= 5,6 … , 而是因为中间layer（也就是聚合次数）设置的越多，实际上模型更有一种聚合越多节点（极限情况是所有节点，如果是全连通的图）。<br><a id="more"></a></p>
-<h3 id="GCN聚合方式的改良"><a href="#GCN聚合方式的改良" class="headerlink" title="GCN聚合方式的改良"></a>GCN聚合方式的改良</h3><p>但是事实情况下，是只需要改变聚合的方式，就可以克服经典gcn的局限。聚合方式的改良已经有的是graphsage（邻居抽样和pooling) ,在这篇文章里作者提出ppr的weight来代替传统gcn的统计意义上的聚合。</p>
-<script type="math/tex; mode=display">\begin{aligned} \boldsymbol{Z}^{(0)} &=\boldsymbol{H}=f_{\theta}(\boldsymbol{X}) \\ \boldsymbol{Z}^{(k+1)} &=(1-\alpha) \hat{\boldsymbol{A}} \boldsymbol{Z}^{(k)}+\alpha \boldsymbol{H} \\ \boldsymbol{Z}^{(K)} &=\operatorname{softmax}\left((1-\alpha) \hat{\boldsymbol{A}} \boldsymbol{Z}^{(K-1)}+\alpha \boldsymbol{H}\right) \end{aligned}</script><p>仔细观察，与传统gcn的区别$A$ , $Z$, $H$ 矩阵方式的变化，传统gcn会用到所有的邻居的和然后取加权平均，这个地方会用到跳转概率$1- \alpha$ 作为邻居聚合方式的表达 。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>DGL已经有了一个论文的代码版本</p>
-<pre><code># init 函数
-#for i in range(1, len(hiddens)):
-#           self.layers.append(nn.Linear(hiddens[i - 1], hiddens[i]))
-# forward 
-for layer in self.layers[1:-1]:
-    h = self.activation(layer(h))
-h = self.layers[-1](self.feat_drop(h))
-# propagation step
-h = self.propagate(self.g, h)
-</code></pre><p>这里来看其实dgl版本的只是在最后一层进行了个propagete，并没有在中间层设定ppr的跳转过程，中间层遵循的还是gcn的聚合模式。举个例子,对于hidden size 为2，propagation step 为10的情况。中间层会有两次经典gcn式的聚合，然后输出层会有10次$\mathbf{Z}^{(k+1)}=(1-\alpha) \boldsymbol{A} \hat{\mathbf{Z}}^{(k)}+\alpha \boldsymbol{H}$ 的聚合。</p>
-<h2 id="与另外一篇论文的对比"><a href="#与另外一篇论文的对比" class="headerlink" title="与另外一篇论文的对比"></a>与另外一篇论文的对比</h2><p>同时说到gcn和ppr，就不得不提<a href="http://www.mlgworkshop.org/2018/papers/MLG2018_paper_12.pdf" target="_blank" rel="noopener">GraphRAD</a>，里面也是用到了gcn和ppr算法。在那篇论文里，实现的其实是通过社区挖掘算法（基于ppr计算）从之前的原图挖出来一个小图，然后再在这个小图上面训练一个经典的gcn模型。</p>
+        <h2 id="Restart"><a href="#Restart" class="headerlink" title="Restart"></a>Restart</h2><p>几个月前使用过hexo 建过blog ， 当时还配置了inline-math ; 几个月后发现当时的math配置不能用了以及自己又忘了当时hexo 自己做的修改和指令。 现在只好重新建站，同时希望可以完成每周一篇post 发表。</p>
+<h2 id="What-this-post-about"><a href="#What-this-post-about" class="headerlink" title="What this post about ?"></a>What this post about ?</h2><p>这次我会详细记录自己建站流程，以及遇到的坑和解决方式。 </p>
+<p>主要分为以下三块内容：</p>
+<ul>
+<li>hexo 配置&amp;主题设置</li>
+<li>我的需求如何实现</li>
+<li>日常使用</li>
+</ul>
+<h2 id="hexo-配置-amp-主题设置"><a href="#hexo-配置-amp-主题设置" class="headerlink" title="hexo 配置&amp;主题设置"></a>hexo 配置&amp;主题设置</h2><p>网上很多hexo 配置文章了，基本上就是：</p>
+<ul>
+<li>用npm 安装下hexo-cli</li>
+<li>git clone next theme  <a href="https://www.jianshu.com/p/b20fc983005f" target="_blank" rel="noopener">指南这里有</a></li>
+</ul>
+<p>在这里主要提下几个容易混淆的地方:</p>
+<ul>
+<li>theme 安装： 需要在你起blog 的主要目录，然后<code>git clone https://github.com/iissnan/hexo-theme-next themes/next</code>  </li>
+<li>两个很容易混淆的config：<ul>
+<li>一个是在主目录下有个_config.yml : 这个是hexo的配置文件。主要设置站点名字，语言、作者、部署的网站,math(如果需要)</li>
+<li>然后在<code>主目录/themes/next</code> 下也有个_config.yml ：这个是theme 的配置文件。主要用来设置tag, category 和enable math 开关。</li>
+</ul>
+</li>
+</ul>
+<h2 id="我的两个需求"><a href="#我的两个需求" class="headerlink" title="我的两个需求"></a>我的两个需求</h2><p>建站当时主要有两个需求： 一个用来记录读过的论文，一个用来记录体重管理。</p>
+<ul>
+<li>论文的话，肯定离不开会有公式，google了hexo对math的支持，大多数是说hexo-math。 但其实hexo-math 这个包已经没在维护了，最后定位到网上有大佬做了介绍, 讲的很好，移步<a href="https://www.jianshu.com/p/b20fc983005f" target="_blank" rel="noopener">这里</a>.</li>
+<li>体重管理需要一个在线交互的折线图: 这方面第一直觉想到的是echarts , 还好百度<a href="https://tushuo.baidu.com/" target="_blank" rel="noopener">图说</a>可以在线编辑图片然后导出代码块。但另外一个问题来了，hexo 可以渲染echarts 吗？ 搜了一波插件发现有人也实现了，直接上<a href="https://kchen.cc/2016/11/05/echarts-in-hexo/" target="_blank" rel="noopener">链接</a>。</li>
+</ul>
+<h2 id="日常使用"><a href="#日常使用" class="headerlink" title="日常使用"></a>日常使用</h2><p>hexo 很好用，此次几个月没用自己都忘了post 和page 有啥区别了，折腾了很久也遇到多次render 错误。这里总结下：</p>
+<ul>
+<li>post: 就是一篇帖子，你发的一个博文就是一个post</li>
+<li>page： 就是一个个你可以切换的页面，我觉得可以理解为主题</li>
+</ul>
+<p>在路径显示上是这样的</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">布局</th>
+<th style="text-align:left">路径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>post</code></td>
+<td style="text-align:left"><code>source/_posts</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>page</code></td>
+<td style="text-align:left"><code>source</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>说post 和page的作用是日常使用应该是基本上会以hexo new post “post_name” 为主，然后去source/_posts 下找到对应.md 文件进行修改。</p>
+<p>几个日常操作:</p>
+<ul>
+<li>hexo g (生成)</li>
+<li>hexo s (本地起一个server， 可以用来查看)</li>
+<li>hexo d （push 到github, 所有人都可以通过yourgitusername.github.io查看) </li>
+</ul>
 
     </div>
 
@@ -233,7 +272,7 @@ h = self.propagate(self.g, h)
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Graph-deep-learning/" rel="tag"># Graph deep learning</a>
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
           </div>
 
         
@@ -241,11 +280,11 @@ h = self.propagate(self.g, h)
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2020/07/18/weight-loss/" rel="next" title="体重公开处刑">
-      体重公开处刑 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/07/18/weight-loss/" rel="prev" title="体重公开处刑">
+      <i class="fa fa-chevron-left"></i> 体重公开处刑
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -304,7 +343,7 @@ h = self.propagate(self.g, h)
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#主要思想"><span class="nav-number">1.</span> <span class="nav-text">主要思想</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GCN-局限"><span class="nav-number">1.1.</span> <span class="nav-text">GCN 局限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GCN聚合方式的改良"><span class="nav-number">1.2.</span> <span class="nav-text">GCN聚合方式的改良</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">1.3.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与另外一篇论文的对比"><span class="nav-number">2.</span> <span class="nav-text">与另外一篇论文的对比</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Restart"><span class="nav-number">1.</span> <span class="nav-text">Restart</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-this-post-about"><span class="nav-number">2.</span> <span class="nav-text">What this post about ?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-配置-amp-主题设置"><span class="nav-number">3.</span> <span class="nav-text">hexo 配置&amp;主题设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我的两个需求"><span class="nav-number">4.</span> <span class="nav-text">我的两个需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日常使用"><span class="nav-number">5.</span> <span class="nav-text">日常使用</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -385,7 +424,7 @@ h = self.propagate(self.g, h)
 <script src="/js/schemes/pisces.js"></script>
 
 
-<script src="/js/next-boot.js"></script>
+<script src="/js/next-boot.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
 
@@ -409,59 +448,6 @@ h = self.propagate(self.g, h)
   
 
   
-      
-
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-
-    
 
   
 
